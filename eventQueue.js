@@ -60,6 +60,7 @@
 							},50);
 						},useCapture);
 					})
+					return true;
 				}
 				Event._addEventListener(el,type,fn,useCapture);
 			}
