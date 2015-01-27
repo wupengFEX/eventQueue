@@ -51,7 +51,7 @@
 		add : function(){
 			return document.addEventListener ? function(el,type,fn,useCapture){				
 				var useCap = useCapture ? useCapture : false;
-				if(type == 'resize'){
+				if(type == 'resize'){//解决resize事件多次执行的bug
 					return Event.addQueue(el,type,fn,useCap,function(){
 						el.addEventListener(type,function(e){													
 							if(Event.resizeTimer) clearTimeout(Event.resizeTimer);
