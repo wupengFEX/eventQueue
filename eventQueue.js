@@ -81,7 +81,7 @@
 		},
 		remove : function(el,type,fn,useCapture){
 			useCapture = useCapture ? useCapture : false;
-			if(el.detachEvent){
+			if(el.attachEvent){
 				return function(el,type,fn){
 					Event.removeFn(el,type,fn,useCapture,function(fn){
 						el.detachEvent('on' + type,fn);
