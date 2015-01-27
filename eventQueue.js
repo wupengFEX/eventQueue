@@ -66,7 +66,7 @@
 			}
 			else{
 				 if(type == 'resize'){//解决resize事件多次执行的bug
-	                return Event.addQueue(el,type,fn,function(){
+	        			return Event.addQueue(el,type,fn,function(){
 						el.attachEvent('on' + type,function(e){
 							if(Event.resizeTimer) clearTimeout(Event.resizeTimer);
 							Event.resizeTimer = setTimeout(function(){
@@ -74,9 +74,9 @@
 							},50);
 						});
 					})           
-	           		return true;
-	       		}
-	       		Event._attachEvent(el,type,fn,useCapture);
+	           			return true;
+	       			}
+	       			Event._attachEvent(el,type,fn,useCapture);
 			}	
 		},
 		remove : function(el,type,fn,useCapture){
