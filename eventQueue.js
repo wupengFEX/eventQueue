@@ -76,7 +76,7 @@
 					})           
 	           		return true;
 	       		}
-	       		Event._attachEvent(_el,evType,func,useCapture);
+	       		Event._attachEvent(el,type,fn,useCapture);
 			}	
 		},
 		remove : function(el,type,fn,useCapture){
