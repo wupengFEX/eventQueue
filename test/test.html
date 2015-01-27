@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="a" style="height:200px;width:200px;background:red"></div>
+	<div id="b" style="height:200px;width:200px;background:green"></div>
+	<script type="text/javascript" src="../add.js"></script>	
+	<script type="text/javascript">		
+		var a = document.getElementById('a');
+		var b = document.getElementById('b');
+		var resizeTimer = null;
+		add(a,'click',function(){
+			alert(1)
+		},true)
+		add(a,'click',function(){
+			alert(2)
+		})
+
+		add(b,'click',function(){
+			alert('x')
+		})
+		add(b,'click',function(){
+			alert('y')
+		})
+
+		remove(b,'click',function(){ alert('x')
+		})
+
+		remove(a,'click',function(){
+			alert(1)
+		})
+		remove(a,'click',function(){
+			alert(2)
+		})
+	</script>
+</body>
+</html>
