@@ -5,7 +5,7 @@ Description
 
 How to use
 ==========
-	Introduct the js file,then you can user add or remove to add or remove listener!
+	Introduct the js file,then you can use add or remove to add or remove listener!
 
 Demo
 ==========	
@@ -18,7 +18,7 @@ Demo
 ###	The result is 2,3 in every browser!	
 	remove(a,'click',function(){alert(1)})
 	
-### And the remove function can use many styles and more blank,cause we delete additional blank!such you can user the follwering style:	
+### And the remove function can use many styles and more blank,cause we delete additional blanks!such as the follwering style:	
 	remove(a,'click',function(){ alert(1) } )
 	remove(a,'click',function(){
 		alert(1) } )
