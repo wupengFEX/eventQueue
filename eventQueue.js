@@ -51,7 +51,7 @@
 		add : function(el,type,fn,useCapture){
 			useCapture = useCapture ? useCapture : false;
 			if(el.addEventListener){
-				if(type == 'resize'){					
+				if(type == 'resize'){
 					return Event.addQueue(el,type,fn,function(){
 						el.addEventListener(type,function(e){
 							if(Event.resizeTimer) clearTimeout(Event.resizeTimer);
@@ -64,7 +64,18 @@
 				Event._addEventListener(el,type,fn,useCapture);
 			}
 			else{
-				
+				 if(type == 'resize'){//解决resize事件多次执行的bug
+	                return Event.addQueue(el,type,fn,function(){
+						el.attachEvent('on' + type,function(e){
+							if(Event.resizeTimer) clearTimeout(Event.resizeTimer);
+							Event.resizeTimer = setTimeout(function(){
+								Event._fire(type,el,e);
+							},50);
+						});
+					})           
+	           		return true;
+	       		}
+	       		Event._attachEvent(_el,evType,func,useCapture);
 			}	
 		},
 		remove : function(el,type,fn,useCapture){
